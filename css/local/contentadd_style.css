@@ -628,7 +628,6 @@ p.page_1 {
   padding: 0.5em 0.2em !important;
   }
 
-
 a:active,
 a:visited {
   color: inherit !important;
@@ -646,3 +645,10 @@ a:hover {
   display: none;
   }
 
+#info {
+	text-align: center;
+	color: #4987B3;
+	font-size: 1.2em;
+	margin-top: 1em;
+/*	color: #2A4D66;*/
+}
