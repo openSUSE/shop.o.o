@@ -460,7 +460,7 @@ span.diffchange {
 * Links 
 *------*/
 
-#bodyContent a[href^="http://"],
+/*#bodyContent a[href^="http://"],
 #bodyContent a[href^= "gopher://"] {
     background: url(images/http.png) center right no-repeat;
     padding-right: 18px;
@@ -488,7 +488,7 @@ span.diffchange {
 .link-irc {
     background: url(images/irc.png) center right no-repeat;
     padding-right: 18px;
-}
+}*/
 /* no icon */
 #bodyContent .plainlink,
 #rightnav a {
