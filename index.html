@@ -95,58 +95,35 @@
    						 <a href="https://openshop.myspreadshop.com">openshop</a>
 					</div>
 
-						<div id="myShop">
-    <a href="https://openshop.myspreadshop.com">Americas Shop</a>
-    <a href="https://openshop.myspreadshop.de">Europe/Asia Shop</a>
-</div>
+						<script>
+						    var spread_shop_config = {
+						        shopName: 'openshop',
+						        locale: 'en_DE',
+						        prefix: 'https://openshop.myspreadshop.de',
+						        baseId: 'myShop'
+									    };
+						</script>
 
-<script>
-    function loadShop(region) {
-        var spread_shop_config = {};
+						<script type="text/javascript"
+				        	src="https://openshop.myspreadshop.com/shopfiles/shopclient/shopclient.nocache.js">
+					</script>
 
-        // Remove any existing shop script
-        var existingScript = document.querySelector('script[src*="shopclient.nocache.js"]');
-        if (existingScript) {
-            existingScript.remove();
-        }
+					<div id="myShop">
+					    <a href="https://openshop.myspreadshop.de">openshop</a>
+					</div>
 
-        // Create the shop configuration and load the appropriate shop client script
-        var script = document.createElement('script');
-        if (region === 'Americas') {
-            spread_shop_config = {
-                shopName: 'openshop',
-                locale: 'us_US',
-                prefix: 'https://openshop.myspreadshop.com',
-                baseId: 'myShop'
-            };
-            script.src = "https://openshop.myspreadshop.com/shopfiles/shopclient/shopclient.nocache.js";
-        } else if (region === 'Europe/Asia') {
-            spread_shop_config = {
-                shopName: 'openshop',
-                locale: 'en_DE',
-                prefix: 'https://openshop.myspreadshop.de',
-                baseId: 'myShop'
-            };
-            script.src = "https://openshop.myspreadshop.de/shopfiles/shopclient/shopclient.nocache.js";
-        }
+						<script>
+						    var spread_shop_config = {
+						        shopName: 'openshop',
+						        locale: 'us_US',
+						        prefix: 'https://openshop.myspreadshop.com',
+						        baseId: 'myShop'
+									    };
+						</script>
 
-        document.head.appendChild(script); // Load the new script
-    }
-
-    // Auto-load default region (Americas)
-    loadShop('Americas'); // or loadShop('Europe/Asia') for default Europe/Asia
-
-    // Event listeners for region switching
-    document.querySelector('a[href="https://openshop.myspreadshop.com"]').addEventListener('click', function(e) {
-        e.preventDefault();
-        loadShop('Americas');
-    });
-
-    document.querySelector('a[href="https://openshop.myspreadshop.de"]').addEventListener('click', function(e) {
-        e.preventDefault();
-        loadShop('Europe/Asia');
-    });
-</script>
+						<script type="text/javascript"
+					        src="https://openshop.myspreadshop.de/shopfiles/shopclient/shopclient.nocache.js">
+					</script>
 		</div>
 	</body>
 </html>
