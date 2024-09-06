@@ -92,38 +92,45 @@
 					</div>
 				</div>
 					<div id="myShop">
-   						 <a href="https://openshop.myspreadshop.de">openshop</a>
-					</div>
+    <a href="#" onclick="loadShop('eu')">openshop (Europe)</a> |
+    <a href="#" onclick="loadShop('us')">openshop (US)</a>
+</div>
 
-						<script>
-						    var spread_shop_config = {
-						        shopName: 'openshop',
-						        locale: 'en_DE',
-						        prefix: 'https://openshop.myspreadshop.de',
-						        baseId: 'myShop'
-									    };
-						</script>
+<script>
+    function loadShop(region) {
+        var spread_shop_config;
 
-						<script type="text/javascript"
-				        	src="https://openshop.myspreadshop.com/shopfiles/shopclient/shopclient.nocache.js">
-					</script>
+        if (region === 'eu') {
+            spread_shop_config = {
+                shopName: 'openshop',
+                locale: 'en_DE',
+                prefix: 'https://openshop.myspreadshop.de',
+                baseId: 'myShop'
+            };
+        } else if (region === 'us') {
+            spread_shop_config = {
+                shopName: 'openshop',
+                locale: 'us_US',
+                prefix: 'https://openshop.myspreadshop.com',
+                baseId: 'myShop'
+            };
+        }
 
-					<div id="myShop">
-					    <a href="https://openshop.myspreadshop.com">openshop</a>
-					</div>
+        // Clear the current shop
+        document.getElementById('myShop').innerHTML = '';
 
-						<script>
-						    var spread_shop_config = {
-						        shopName: 'openshop',
-						        locale: 'us_US',
-						        prefix: 'https://openshop.myspreadshop.com',
-						        baseId: 'myShop'
-									    };
-						</script>
+        // Dynamically load the shop client script
+        loadShopClient(spread_shop_config);
+    }
 
-						<script type="text/javascript"
-					        src="https://openshop.myspreadshop.com/shopfiles/shopclient/shopclient.nocache.js">
-					</script>
+    function loadShopClient(config) {
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = config.prefix + '/shopfiles/shopclient/shopclient.nocache.js';
+        document.body.appendChild(script);
+    }
+</script>
+
 		</div>
 	</body>
 </html>
